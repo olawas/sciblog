@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='text-black flex flex-col'>
-        SCIBLOG DONENOS EN CUENTA RUT 20626454-3
+        SCIBLOG DONENOS EN CUENTA RUT 20626454-3 xd
       </div>
     </main>
   )
