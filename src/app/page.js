@@ -22,7 +22,7 @@ export default function Home() {
         cualquier cosa
         <button onClick={()=>setNum(num+1) }>Agregar 1</button>
         <div>
-          cantidad de veces presionado: {num}
+          CAMBIO 1 {num}
         </div>
         {
           arregloComponents
