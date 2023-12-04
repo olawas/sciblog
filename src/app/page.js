@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='text-black flex flex-col'>
-        cualquier cosa
+        cualquier cosaaaaaaaaaaaaaa
         <button onClick={()=>setNum(num+1) }>Agregar 1</button>
         <div>
           CAMBIO 1 {num}
