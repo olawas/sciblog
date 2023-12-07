@@ -5,11 +5,9 @@ import {Button} from '@nextui-org/button';
 export default function Home() {
 
   return (
-    <main className=" flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <Button color="primary">
-          Button
-        </Button>
+    <main className="w-full h-full">
+      <div className='text-on-secondary'>
+        Página principal
       </div>
     </main>
   )
