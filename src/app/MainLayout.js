@@ -6,7 +6,7 @@ import {HomeIcon, UserCircleIcon, ChatBubbleLeftRightIcon, UserGroupIcon, Rectan
 const MainLayout = ({children}) => {
   const options=[
     {
-      label: 'Home',
+      label: 'Inicio',
       key: '/',
       icon: <HomeIcon className="h-6 w-6" />,
     },
@@ -39,8 +39,8 @@ const MainLayout = ({children}) => {
   return (
     <div className='flex flex-col w-screen h-screen'>
       <TopBar className="bg-secondary-bg text-on-secondary w-full h-16" options={[]} />
-      <div className='flex flex-row w-full h-full bg-background text-on-secondary'>
-        <LeftMenu className="bg-primary-bg text-on-primary w-1/5 h-full" options={options} getOptionKey={option=>option.key} getOptionLabel={option=>option.label} getOptionIcon={option=>option.icon}/>
+      <div className='flex flex-row w-full h-full max-h-full bg-background text-on-secondary'>
+        <LeftMenu className="bg-primary-bg text-on-primary w-1/6 h-full" options={options} getOptionKey={option=>option.key} getOptionLabel={option=>option.label} getOptionIcon={option=>option.icon}/>
         {children}
       </div>
     </div>
