@@ -17,11 +17,12 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            'secondary-bg': '#C4B5FD',
-            'primary-bg': '#2E1065',
+            'secondary-bg': '#A3B8D4',
+            'terciary-bg':  '#EBE0F5',
+            'primary-bg': '#0E102F',
             'on-primary': '#F7EEFF',
             'on-secondary': '#010201',
-            background: "#F7EEFF", // or DEFAULT
+            background: "#FBFBFD", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900
@@ -33,11 +34,12 @@ module.exports = {
         },
         dark: {
           colors: {
-            'secondary-bg': '#7963B1',
-            'primary-bg': '#220949',
+            'secondary-bg': '#6968BC',
+            'primary-bg': '#0E102F',
+            'terciary-bg': '#C8B2DE',
             'on-primary': '#EFEBFE',
             'on-secondary': '#EFEBFE',
-            background: "#15022D", // or DEFAULT
+            background: "#07091E", // or DEFAULT
             foreground: "#ECEDEE", // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900

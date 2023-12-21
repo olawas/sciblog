@@ -2,8 +2,11 @@
 import TopBar from '@/components/TopBar'
 import LeftMenu from '@/components/LeftMenu'
 import {HomeIcon, UserCircleIcon, ChatBubbleLeftRightIcon, UserGroupIcon, RectangleGroupIcon, QuestionMarkCircleIcon} from '@heroicons/react/24/solid'
+import { useContext } from 'react';
+
 
 const MainLayout = ({children}) => {
+
   const options=[
     {
       label: 'Inicio',

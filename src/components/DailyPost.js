@@ -1,4 +1,6 @@
 import React from 'react'
+import Image  from 'next/image';
+import DailyPostComments from './DailyPostComments';
 
 const DailyPost = ({className}) => {
   return (
@@ -7,10 +9,17 @@ const DailyPost = ({className}) => {
         <div className='border-2 flex flex-col'>
           <div className='border-2 flex flex-row h-96'>
             <div className='border-2 w-4/5'>
-
+              <Image
+                width={800}
+                height={1000}
+                src={'/pre2.png'}>
+              </Image>
+              
             </div>
             <div className='border-2 w-2/5 min-w-min'>
-              <div className='w-60'></div>
+              <div className='w-full h-full'>
+                <DailyPostComments className="w-full h-full"/>
+              </div>
             </div>
           </div>
           <div className='text-on-primary bg-primary-bg w-full flex flex-row min-h-content p-2'>

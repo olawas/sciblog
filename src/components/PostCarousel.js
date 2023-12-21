@@ -9,16 +9,16 @@ const PostCarousel = ({className}) => {
         <div className="relative overflow-x-hidden w-4/5 ">
           <div className="flex -mx-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost/>
+              <MiniPost title="Cancer" description="Mucho cancer en chile"/>
             </div>  
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost/>
+              <MiniPost title="Diabetes en watones" description="No comas tanto amigo, deja los azucares"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost/>
+              <MiniPost title="Calambre ahhh" description="Como evitar los calambritos"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost/>
+              <MiniPost title="Muerte subdita en chile" description="Hay gente que se muere porque si"/>
             </div>
           </div>  
         </div>
