@@ -10,9 +10,9 @@ const PreviewPost = ({className}) => {
             src={'/pre.webp'}>
           </Image>
         </div>
-        <div className="bg-terciary-bg text-on-secondary w-3/4 h-60 flex flex-col border-2 border-gray-700 rounded-md ">
+        <div className="bg-primary-bg text-on-primary w-3/4 h-60 flex flex-col border-2 border-gray-700 rounded-md ">
           <div className="">
-            <p className=""> Hábitos que mejoran la memoria </p>
+            <p className="text-lg font-semibold m-4"> Hábitos que mejoran la memoria </p>
           </div>
         </div>
       </div>
