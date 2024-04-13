@@ -20,6 +20,7 @@ model Usuario {
   email    String @unique
   password String
   area_especializacion String
+  //useridfk Usuario @relation(fields: [id], references: [id])
 }
 
 model Dataset {
@@ -35,4 +36,12 @@ model Estudio{
   titulo    String   @db.VarChar(255)
   descripcion String?
   fechaPublicacion DateTime @default(now())
+}
+model Comentario {
+  ComentarioID Int    @id
+  Texto        String
+  Fecha        DateTime
+  //UserID       Usuario   @relation(fields: [useridfk], references: [])
+  UserIDFK     Int
+  //Estudio      Estudio[]
 }
