@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -20,7 +14,10 @@ model Usuario {
   email    String @unique
   password String
   area_especializacion String
-  //useridfk Usuario @relation(fields: [id], references: [id])
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  dataSets Dataset[]
+    //useridfk Usuario @relation(fields: [id], references: [id])
 }
 
 model Dataset {
@@ -29,19 +26,39 @@ model Dataset {
   descripcion String
   fechaCreacion DateTime @default(now())
   tipo String?
+  userId  Int
+  usuario_creador Usuario @relation(fields: [userId], references: [id])
+  estudios Estudio[]
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
 }
 
 model Estudio{
   id       Int    @id @default(autoincrement())
   titulo    String   @db.VarChar(255)
   descripcion String?
-  fechaPublicacion DateTime @default(now())
+  datasetId Int
+  dataSet Dataset  @relation(fields: [datasetId], references: [id])
+  comentarios Comentario[]
+  createdAt DateTime @default(now())//Fecha Creación
+  updateAt DateTime @updatedAt
 }
 model Comentario {
-  ComentarioID Int    @id
+  id           Int    @id @default(autoincrement())
   Texto        String
   Fecha        DateTime
-  //UserID       Usuario   @relation(fields: [useridfk], references: [])
-  UserIDFK     Int
-  //Estudio      Estudio[]
+  estudioId    Int
+  estudio Estudio @relation(fields:[estudioId], references: [id])
+  respuestas Respuesta[]
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+model Respuesta {
+    id Int @id  @default(autoincrement())
+    content String?
+    comentarioId  Int
+    comentario Comentario @relation(fields:[comentarioId], references: [id])
+    createdAt DateTime @default(now())
+    updateAt DateTime  @updatedAt
 }
