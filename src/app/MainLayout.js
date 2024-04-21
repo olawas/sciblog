@@ -3,6 +3,8 @@ import TopBar from '@/components/TopBar'
 import LeftMenu from '@/components/LeftMenu'
 import {HomeIcon, UserCircleIcon, ChatBubbleLeftRightIcon, UserGroupIcon, RectangleGroupIcon, QuestionMarkCircleIcon} from '@heroicons/react/24/solid'
 import { useContext } from 'react';
+import { useSession } from 'next-auth/react';
+import { Spinner } from '@nextui-org/react';
 
 
 const MainLayout = ({children}) => {
@@ -39,6 +41,12 @@ const MainLayout = ({children}) => {
       icon: <QuestionMarkCircleIcon className="h-6 w-6" />,
     }
   ]
+  const {data, status} = useSession()
+  if(status === 'loading') return(
+    <div className='w-screen h-screen flex flex-row justify-center items-center'>
+      <Spinner/>
+    </div>
+  )
   return (
     <div className='flex flex-col w-screen h-screen'>
       <TopBar className="bg-secondary-bg text-on-secondary w-full h-16" options={[]} />

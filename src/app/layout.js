@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={font.className + ' dark:dark'}>
+      <body className={font.className + 'light'}>
         <Providers>
           <MainLayout>
             {children}

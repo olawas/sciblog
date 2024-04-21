@@ -6,7 +6,6 @@ import LogoColor from '@/assets/LogoColor';
 import {signIn, useSession} from 'next-auth/react'
 const TopBar = ({className, options=[], optionGetLabel=(val)=>val, optionGetHref=(val)=>val}) => {
   const {data, status}  = useSession()
-  console.log(data)
   return (
     <div className={className}>
       <div className="flex flex-row h-full w-full items-center font-bold ">
