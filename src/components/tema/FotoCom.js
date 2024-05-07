@@ -1,11 +1,11 @@
 import Image from 'next/image'
-const Fotoforo = ({className, nombre, description}) => { 
+const FotoCom = ({className, nombre, description}) => { 
   return (
-    <div className='w-full space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 bg-violet-300'>
-        <div className=' flex flex-col w-1/3 justify-start space-y-4 items-center'>
+    <div className='w-full flex-col space-y-2 sm:py-4 sm:flex sm:items-start sm:space-y-0 sm:space-x-6 bg-violet-200'>
+        <div className=' flex flex-row w-1/3 mx-5 justify-start space-y-4 items-start'>
         <Image 
-            width={130}
-            height={130}
+            width={50}
+            height={50}
             src={'/perfil.png'}>
           </Image>
           <div className="border-primary-bg justify-center items-center "> {nombre}</div>
@@ -15,4 +15,4 @@ const Fotoforo = ({className, nombre, description}) => {
   )
 }
  
-export default Fotoforo
+export default FotoCom

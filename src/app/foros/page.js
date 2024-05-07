@@ -1,6 +1,12 @@
+'use client'
 import {Button} from '@nextui-org/button'; 
 import ForoPost from '@/components/ForoPost';
+import {useRouter} from 'next/navigation'
+import SearchBar from '@/components/SearchBar';
+
 export default function Page() {
+  const router =useRouter()
+
     return (
       <div class="flex w-full flex-col mx-5 overflow-y-scroll h-full ">
 
@@ -12,13 +18,17 @@ export default function Page() {
           <div className='flex w-full justify-start items-start'>
           <h1 className='text-xl font-semibold'>Temas</h1>
           </div>
+          <div className='flex w-full justify-center items-start'>
+            <SearchBar className='w-full' placeholder="Buscar tema"/>
+          </div>
           <div className="flex w-full justify-end items-center mr-7 ">
-           <Button color="primary">Agregar nuevo tema</Button>
+           <Button color="primary" onClick={() => router.push('foros/FormuForo')}>Agregar nuevo tema</Button>
           </div>
           
         </div>
         <div className='w-full justify-start items-start flex flex-col my-6 mx-2 px-1 space-y-0 '>
-          <ForoPost className="w-full"/>
+          <a onClick={() => router.push('/Tema')}><ForoPost className="w-full"/></a>
+          
         </div>
       </div>
   )
