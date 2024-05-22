@@ -10,7 +10,7 @@ export default function Component() {
     return (
         <div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
             <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg dark:bg-gray-950">
-                <h2 className="mb-4 text-2xl text-white font-bold">Eliminar cuenta</h2>
+                <h2 className="mb-4 text-2xl text-white font-bold">Deshabilitar cuenta</h2>
                 <p className="mb-6 text-gray-500 dark:text-gray-400">
                     Ingresa tu correo electrónico y contraseña para confirmar la eliminación de tu cuenta.
                 </p>
@@ -42,7 +42,7 @@ export default function Component() {
                         type="submit"
                         onPress={() => onOpenChange(true)}
                     >
-                        Eliminar
+                        Deshabilitar
                     </Button>
 
                     <Link href="/perfil">
