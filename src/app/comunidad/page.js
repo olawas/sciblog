@@ -5,7 +5,7 @@ import ComunidadPost from '@/components/ComunidadPost';
 export default function Page() {
 
     return (
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col w-full overflow-y-scroll'>
 
             <div class="flex w-full flex-row mx-5 ">
                 <div className="flex flex-col w-full my-6 mx-5 px-2 space-y-4">
@@ -20,7 +20,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            
             <ComunidadPost className="w-full justify-start mx-5 px-2 "/>
            
         </div>
