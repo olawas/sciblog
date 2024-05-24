@@ -15,7 +15,7 @@ export default function Page() {
                         <SearchBar className='w-full' placeholder="Buscar Grupo"/>
                         <div className='flex flex-row w-full justify-center items-start'></div>
                         <div className='flex flex-col w-full justify-end items-start mr-14'>   
-                            <Button color="primary" >Agregar nuevo tema</Button>
+                            <Button color="primary" >Agregar nuevo grupo</Button>
                         </div>
                     </div>
                 </div>
