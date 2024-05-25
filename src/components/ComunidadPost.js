@@ -7,16 +7,16 @@ const ComunidadPost = ({className}) => {
           <div className="relative w-full  ">
             <div className="flex flex-wrap">
               <div className="w-5/12 px-4 mt-4">
-              <ComunidadFoto titulo={<strong>Grupo de Investigación en Neuropsicología</strong>} area={<strong>Neuropsicología</strong>} description="Este grupo se enfoca en la investigación y la aplicación clínica de la neuropsicología, explorando la relación entre el cerebro y el comportamiento. Los participantes discuten avances recientes en neurociencia cognitiva, comparten casos de estudio y colaboran en proyectos de investigación para avanzar en el campo."/>
+              <ComunidadFoto titulo={<strong>Grupo de Pediatría Pediátrica Estrella</strong>} area={<strong>Pediatría</strong>} description="Este grupo se enfoca en discutir los últimos avances en el cuidado y tratamiento de enfermedades pediátricas, compartiendo casos clínicos y promoviendo la educación continua entre pediatras."/>
               </div>  
               <div className="w-5/12 px-4 mt-4">
-              <ComunidadFoto titulo={<strong>Grupo de Apoyo para Profesionales en Salud Mental</strong>} area={<strong>Bienestar y Salud Mental</strong>} description="Este grupo ofrece un espacio seguro para que los doctores en psicología compartan experiencias, desafíos y estrategias de autocuidado. Los miembros brindan apoyo mutuo, comparten recursos sobre prevención del agotamiento profesional y técnicas para mantener un equilibrio saludable entre el trabajo y la vida personal."/>
+              <ComunidadFoto titulo={<strong>Círculo Oncológico Esperanza</strong>} area={<strong>Oncología</strong>} description="Una comunidad dedicada a apoyar a pacientes con cáncer y a sus familiares, brindando información sobre tratamientos, recursos de apoyo emocional y compartiendo historias de superación."/>
               </div>
               <div className="w-5/12 px-4 mt-4">
-              <ComunidadFoto titulo={<strong>Grupo de Psicoterapia Existencial y Humanista</strong>} area={<strong>Psicoterapia Existencial y Humanista</strong>} description="Este grupo se centra en la filosofía y práctica de la psicoterapia existencial y humanista, que enfatiza la exploración del sentido de la vida, la libertad y la responsabilidad personal. Los miembros comparten técnicas terapéuticas, reflexiones filosóficas y casos clínicos desde esta perspectiva."/>
+              <ComunidadFoto titulo={<strong>Asociación Pediátrica del Futuro</strong>} area={<strong> Pediatría</strong>} description="Una asociación que se centra en impulsar la investigación y la innovación en el campo de la pediatría. Este grupo reúne a pediatras, investigadores y profesionales de la salud infantil para colaborar en proyectos que mejoren la atención médica pediátrica y promuevan la salud y el bienestar de los niños."/>
               </div>
               <div className="w-5/12 px-4 mt-4">
-              <ComunidadFoto titulo={<strong>Grupo de Terapia Cognitivo-Conductual</strong>} area={<strong>Terapia Cognitivo-Conductual (TCC)</strong>} description="Este grupo está dedicado al estudio y la práctica de la terapia cognitivo-conductual, centrada en identificar y cambiar patrones de pensamiento y comportamiento que contribuyen a los problemas psicológicos. Los miembros comparten técnicas, casos clínicos y recursos para mejorar sus habilidades en TCC."/>
+              <ComunidadFoto titulo={<strong>Sociedad de Neurología Cerebral</strong>} area={<strong>Neurología</strong>} description="Esta sociedad está dedicada al estudio y la comprensión del cerebro y el sistema nervioso. Reúne a neurocientíficos, neurólogos, y otros profesionales del campo para discutir avances en la investigación cerebral, diagnóstico y tratamiento de enfermedades neurológicas, y promover la conciencia pública sobre la importancia del cuidado del cerebro para la salud general."/>
               </div>
             </div>  
           </div>

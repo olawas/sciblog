@@ -1,8 +1,11 @@
+'use client'
 import {Button} from '@nextui-org/button'; 
 import SearchBar from '@/components/SearchBar';
 import ComunidadPost from '@/components/ComunidadPost';
+import {useRouter} from 'next/navigation'
 
 export default function Page() {
+    const router =useRouter()
 
     return (
         <div className='flex flex-col w-full overflow-y-scroll'>
@@ -15,7 +18,7 @@ export default function Page() {
                         <SearchBar className='w-full' placeholder="Buscar Grupo"/>
                         <div className='flex flex-row w-full justify-center items-start'></div>
                         <div className='flex flex-col w-full justify-end items-start mr-14'>   
-                            <Button color="primary" >Agregar nuevo grupo</Button>
+                            <Button color="primary" onClick={() => router.push('comunidad/FormuComu')}>Agregar nuevo tema</Button>
                         </div>
                     </div>
                 </div>
