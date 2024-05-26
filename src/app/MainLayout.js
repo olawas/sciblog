@@ -30,11 +30,11 @@ const MainLayout = ({children}) => {
       key: '/comunidad',
       icon: <UserGroupIcon className="h-6 w-6" />,
     },
-    {
-      label: 'Áreas',
-      key: '/areas',
-      icon: <RectangleGroupIcon className="h-6 w-6" />,
-    },
+    // {
+    //   label: 'Áreas',
+    //   key: '/areas',
+    //   icon: <RectangleGroupIcon className="h-6 w-6" />,
+    // },
     {
       label: 'Preguntas frecuentes',
       key: '/faq',
