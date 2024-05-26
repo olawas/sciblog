@@ -1,5 +1,7 @@
 import Usuario from "@/services/Usuario"
 import { NextResponse } from "next/server"
+import db from "@/libs/db"
+
 export const POST = async (req)  => {
   try{
     const token = JSON.parse(req.cookies.get('auth').value)
@@ -22,4 +24,9 @@ export const POST = async (req)  => {
     console.error('SERVER ERROR', e)
     return NextResponse.json({message: 'Error en el servidor'}, {status:500})
   }
+}
+
+export async function GET(){
+  const usuarios = await db.usuario.findMany()
+  return NextResponse.json(usuarios)
 }
