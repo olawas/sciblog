@@ -25,7 +25,7 @@ export default function Page() {
                 </div>
                 <div className="flex flex-row w-full my-6 mx-5 px-2">
                     <div class="bg-indigo-900 text-white flex flex-row justify-center items-center w-1/6">
-                    <h1 >descripcion: </h1>
+                    <h1 >Descripcion: </h1>
                     </div>
                     <div className='flex flex-row w-full justify-start items-start '>
                         <Textarea color="secondary" placeholder="Descripcion o pregunta del tema" ></Textarea>

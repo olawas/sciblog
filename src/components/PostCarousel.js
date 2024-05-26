@@ -9,16 +9,16 @@ const PostCarousel = ({className}) => {
         <div className="relative overflow-x-hidden w-4/5 ">
           <div className="flex -mx-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title={<strong>Tendencias en Uso de Tecnología Wearable en el Área de la Salud:</strong>} description=" Las tendencias emergentes en el uso de tecnología wearable para el monitoreo de la salud"/>
+              <MiniPost title={<strong>Tendencias en Uso de Tecnología Wearable en el Área de la Salud:</strong>} description=" Las tendencias emergentes en el uso de tecnología wearable"/>
             </div>  
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title={<strong>Desafíos y Oportunidades en Salud Mental Infantil</strong>} description=" Desafíos actuales en el diagnóstico, tratamiento y prevención de trastornos de salud mental en niños y adolescentes"/>
+              <MiniPost title={<strong>Desafíos y Oportunidades en Salud Mental Infantil</strong>} description=" Desafíos actuales en el diagnóstico, tratamiento y prevención"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title={<strong>Impacto de la Telemedicina en la Atención Primaria de Salud:</strong>} description=" Este informe analiza cómo la implementación de la telemedicina ha afectado la accesibilidad, eficacia y calidad de la atención primaria de salud"/>
+              <MiniPost title={<strong>Impacto de la Telemedicina en la Atención Primaria de Salud:</strong>} description=" Este informe analiza cómo la implementación de la telemedicina"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title={<strong>Evaluación de la Efectividad de Programas de Vacunación:</strong>} description=" Evalúa la efectividad de los programas de vacunación en diferentes regiones, examinando tasas de cobertura, incidencia de enfermedades prevenibles por vacunación"/>
+              <MiniPost title={<strong>Evaluación de la Efectividad de Programas de Vacunación:</strong>} description=" Evalúa la efectividad de los programas de vacunación"/>
             </div>
           </div>  
         </div>
