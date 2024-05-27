@@ -18,7 +18,9 @@ const handler = NextAuth({
         const res = await Usuario.findByEmail(token.email)
         if (res) token.registered = true
         else token.registered = false
-        console.log('tokensito', token)
+        session.user.registered = token.registered
+        console.log('token', token)
+        console.log('session', session)
       }
       return session
     }

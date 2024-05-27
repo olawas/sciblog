@@ -5,7 +5,9 @@ import { Button, Input , Select, SelectItem} from '@nextui-org/react';
 import { useMutation } from 'react-query';
 import {useState} from 'react'
 import { useRouter, } from 'next/navigation'
+import { useSession } from 'next-auth/react';
 const Page = () => {
+  const {data, status} = useSession()
   const especializaciones = [
     {
       label:'Oncología',
@@ -26,7 +28,11 @@ const Page = () => {
   const router = useRouter()
   const registroMutation = useMutation({
     mutationFn: (data)=>registro(data),
-    onSuccess: ()=> router.push('/registro/completado'),
+    onSuccess: ()=>{
+      console.log('pushing')
+      router.push('/registro/completado')
+
+    },
     onError: (error)=> console.error('error api registro', error)
   })
 
@@ -42,6 +48,7 @@ const Page = () => {
     event.preventDefault()
 
   }
+  if(status === 'unauthenticated') router.push('/')
   return (
     <div className='w-full flex flex-col justify-start items-center p-8 md:mt-16'>
       <form onSubmit={onRegistrar} className='w-full max-w-3xl flex flex-col items-center space-y-4'>

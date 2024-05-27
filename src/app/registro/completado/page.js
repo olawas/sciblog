@@ -2,11 +2,18 @@
 import { CheckBadgeIcon } from "@heroicons/react/24/solid"
 import { useSession } from 'next-auth/react';
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Page = () =>{
   const session = useSession()
   const router = useRouter()
-  if(session) router.push('/')
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/');
+    }, 5000); //miliseconds
+  }, []);
+
+  if(session?.data?.registrado === true) router.push('/')
   return(
     <div className="w-full flex flex-row space-x-4 justify-center items-center">
       <div className="flex flex-col justify-center items-center space-y-6">  

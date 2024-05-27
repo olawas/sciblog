@@ -5,7 +5,7 @@ import db from "@/libs/db"
 export const POST = async (req)  => {
   try{
     const token = JSON.parse(req.cookies.get('auth').value)
-    if(!token) return nextResponse.json({message: 'Necesita tener sesión iniciada'}, {status: 401,})
+    if(!token) return NextResponse.json({message: 'Necesita tener sesión iniciada'}, {status: 401,})
     if(token.registered === true) return NextResponse.json({message: "Usuario ya registrado"}, {status: 409,})
     const {nombre, apellido, area_especializacion} = await req.json()
     console.log('n9',nombre)
