@@ -44,7 +44,7 @@ module.exports = {
             primary: {
               //... 50 to 900
               foreground: "#F7EEFF",
-              DEFAULT: "##7963B1",
+              DEFAULT: "#7963B1",
             },
           },
           // ... rest of the colors

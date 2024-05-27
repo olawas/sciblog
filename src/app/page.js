@@ -6,6 +6,7 @@ import SearchBar from '@/components/SearchBar';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import {Button} from '@nextui-org/button'; 
 import DailyPost from '../components/DailyPost';
+import Link from 'next/link'; // Importa Link de Next.js
 
 
 export default function Home() {
@@ -15,8 +16,11 @@ export default function Home() {
       <div className='flex flex-col text-on-secondary'>
         <div className='flex flex-row w-full my-6 mx-2 px-2'>
           <div className='flex w-full justify-start items-start'>
-            <Button color="primary">Nueva publicación</Button>
-          </div>
+            <Link href="/agregarPublicacion">
+              <Button color="primary"
+              >Nueva publicación</Button>
+            </Link>
+          </div>            
           <div className='flex flex-col w-full justify-center space-y-4 items-center'>
             <h1 className='font-semibold text-3xl'>Buscar</h1>
             <SearchBar className='w-full'/>
