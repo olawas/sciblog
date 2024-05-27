@@ -41,9 +41,9 @@ model Estudio{
   datasetId Int
   dataSet Dataset  @relation(fields: [datasetId], references: [id])
   comentarios Comentario[]
-  tags Tag[]
+  tags String[]
   createdAt DateTime @default(now())//Fecha Creación
-  updateAt DateTime @updatedAt
+  updateAt DateTime @updatedAt 
 }
 model Comentario {
   id           Int    @id @default(autoincrement())
