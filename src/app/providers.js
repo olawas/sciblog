@@ -9,7 +9,7 @@ import {Context, createMainContext} from '@/contexts/MainContext'
 const queryClient = new QueryClient()
 export function Providers({children}) {
 
-  const [theme, setContextTheme] = useState(localStorage.getItem('theme') ?? 'light')
+  const [theme, setContextTheme] = useState(typeof window !== "undefined" && (localStorage.getItem('theme') ?? 'light'))
   const context = {
     theme,
     setContextTheme,

@@ -42,10 +42,7 @@ const MainLayout = ({children}) => {
     }
   ]
   const {data, status} = useSession()
-  console.log('ses', data)
-  console.log('ses status', status)
   const path = usePathname();
-  console.log('path', path)
   if (localStorage.getItem('theme') == undefined ) localStorage.setItem('theme', 'light')
   if(status === 'loading') return(
     <div className='w-screen h-screen flex flex-row justify-center items-center'>
@@ -57,7 +54,6 @@ const MainLayout = ({children}) => {
     redirect('/registro')
   }
   const {theme} = useContext(Context)
-  console.log('th', theme)
   return (
     <div className={`flex flex-col w-screen h-screen ${theme} `}>
       <TopBar className="bg-secondary-bg text-on-secondary w-full h-16" options={[]} />

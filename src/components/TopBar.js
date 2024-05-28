@@ -3,7 +3,8 @@
 import React from 'react'
 import { Button } from '@nextui-org/react';
 import LogoColor from '@/assets/LogoColor';
-import {signIn, useSession} from 'next-auth/react'
+import {signIn, useSession, signOut} from 'next-auth/react'
+
 const TopBar = ({className, options=[], optionGetLabel=(val)=>val, optionGetHref=(val)=>val}) => {
   const {data, status}  = useSession()
   return (
@@ -28,6 +29,7 @@ const TopBar = ({className, options=[], optionGetLabel=(val)=>val, optionGetHref
         }
 
         </div>
+        {status === 'authenticated' && <Button color="secondary" onClick={()=> signOut()}> Cerrar Sesión</Button>}
       </div>
     </div>
   )
