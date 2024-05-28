@@ -12,8 +12,8 @@ const ForoPost = ({className}) => {
             <div className="flex flex-col w-full">
              {
               data?.data.data.map(
-                item=>(
-                  <div className="w-full px-4 mt-4">
+                (item, index)=>(
+                  <div className="w-full px-4 mt-4" key={index}>
                     <FotoForo nombre={<strong>{item.usuario_tema.nombre +' '+item.usuario_tema.apellido}</strong>} description={item.nombre}/>
                   </div>
                 )
