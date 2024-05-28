@@ -17,3 +17,13 @@ export async function POST(req) {
 		return NextResponse.json({ message: 'error creando tema de foro'}, { status: 500 });
 	}
 }
+
+export async function GET(req){
+	try {
+		const temas = await Foro.findAll()
+    return  NextResponse.json({message: 'Tema creado correctamente', data: temas,}, {status: 200})
+	} catch (e) {
+		console.error('SERVER ERROR OBTENIENDO FORO', e)
+		return NextResponse.json({ message: 'error creando tema de foro'}, { status: 500 });
+	}
+}

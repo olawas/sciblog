@@ -19,5 +19,11 @@ export default {
       }
     )
   },
-
+  findAll: async () => {
+    return await prisma.Tema.findMany({
+      include:{
+        usuario_tema: true
+      }
+    })
+  }
 }
