@@ -8,6 +8,7 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Card, Ca
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalContent, useDisclosure } from '@nextui-org/react';
 import { TrashIcon, PencilIcon, ShareIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'; // Importa Link de Next.js
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 const Componente = () => {
   const { isOpen, onOpenChange } = useDisclosure();
@@ -49,14 +50,7 @@ const Componente = () => {
 
         <div className="flex-col w-1/3 space-y-2">
           <div className="flex justify-end"> 
-            <Select
-              items={animals}
-              label="Elegir Tema"
-              placeholder="Selecciona un tema"
-              className="max-w-xs"
-            >
-              {(animal) => <SelectItem key={animal.value}>{animal.label}</SelectItem>}
-            </Select>
+            <ThemeSwitch></ThemeSwitch>
           </div>
           <div className="flex justify-end space-x-2">
             <Button
