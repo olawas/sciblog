@@ -14,14 +14,14 @@ export default {
       return null
     }
   },
-  register: async ({nombre, apellido, email, area_especializacion, password}) => {
+  register: async ({nombre, apellido, email, area_especializacion, organizacion}) => {
     await prisma.Usuario.create({
       data:{
         nombre,
         apellido,
         email,
         area_especializacion,
-        password
+        organizacion,
       }
     })
   }

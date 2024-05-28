@@ -7,14 +7,14 @@ export const POST = async (req)  => {
     const token = JSON.parse(req.cookies.get('auth').value)
     if(!token) return NextResponse.json({message: 'Necesita tener sesión iniciada'}, {status: 401,})
     if(token.registered === true) return NextResponse.json({message: "Usuario ya registrado"}, {status: 409,})
-    const {nombre, apellido, area_especializacion} = await req.json()
+    const {nombre, apellido, area_especializacion, organizacion} = await req.json()
     console.log('n9',nombre)
     const usuario = await Usuario.register({
       email: token.email,
       nombre: nombre,
       apellido: apellido,
       area_especializacion: area_especializacion,
-      password: '',
+      organizacion: organizacion,
     })
     const response = NextResponse.json({message: 'Usuario registrado correctamente', data: usuario,}, {status: 200})
     response.cookies.delete('next-auth.session-token')
