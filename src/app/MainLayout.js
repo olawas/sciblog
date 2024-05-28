@@ -44,7 +44,7 @@ const MainLayout = ({children}) => {
   const {data, status} = useSession()
   const path = usePathname();
   const {theme} = useContext(Context)
-  if (localStorage.getItem('theme') == undefined ) localStorage.setItem('theme', 'light')
+  if (typeof windows != 'undefined' && localStorage.getItem('theme') == undefined ) localStorage.setItem('theme', 'light')
   if(status === 'loading') return(
     <div className='w-screen h-screen flex flex-row justify-center items-center'>
       <Spinner/>
