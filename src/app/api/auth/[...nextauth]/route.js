@@ -21,8 +21,6 @@ const handler = NextAuth({
         else token.registered = false
         session.user.registered = token.registered
         session.user = {...session.user, ...res}
-        console.log('token', token)
-        console.log('session', session)
       }
       return session
     }

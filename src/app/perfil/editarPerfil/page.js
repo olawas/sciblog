@@ -1,24 +1,52 @@
 "use client"
-import {useState } from 'react'
+import {useState, useEffect } from 'react'
 import { Input, Button } from '@nextui-org/react';
 import Link from 'next/link'; // Importa Link de Next.js
 import { Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 import { useMutation } from 'react-query';
-
+import { updatePerfil } from '@/queries/perfil'
 export default function EditProfileComponent() {
 	const { isOpen, onOpenChange } = useDisclosure();
 	const [nombre, setNombre] = useState('')
 	const [apellido, setApellido] =useState('')
 	const [organizacion, setOrganizacion] = useState('')
-	const [especializacion, setEspecializacion] = useState('')
-
+	const [area_especializacion, setAreaEspecializacion] = useState('')
+	const [msg, setMsg] = useState(<></>)
+	useEffect(
+		()=>{
+			if(nombre == '') setMsg(<p className="text-red-700"> Nombre no puede ser vacio </p>)
+			if(apellido == '') setMsg(<p className="text-red-700"> Apellido no puede ser vacio </p>)
+			if(organizacion == '') setMsg(<p className="text-red-700"> Organizacion no puede ser vacio </p>)
+			if(area_especializacion == '') setMsg(<p className="text-red-700"> Area de especialización no puede ser vacio </p>)
+			if(nombre && apellido && organizacion && area_especializacion) setMsg(<></>)
+		}
+	,[nombre,apellido,organizacion, area_especializacion])
 	const perfilMutation = useMutation(
-		
+		{
+			mutationFn: (data) => updatePerfil(data),
+			onSuccess: (msg) => {
+				console.log('editado correctamente')
+				setMsg(<p className="text-green-700"> Se editó correctamente el perfil </p>)
+			},
+			onError: (error) => {
+				console.error('error api edicion perfil', error)
+				setMsg(<p className="text-red-700"> Error de servidor </p>)
+			}
+		}
 	)
+	const onSubmit = () =>{
+		perfilMutation.mutate({
+			nombre,
+			apellido,
+			organizacion,
+			area_especializacion
+		})
+	}
 	return (
 		<div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
 			<div className="w-full max-w-lg rounded-lg bg-white p-8 shadow-lg dark:bg-gray-950">
 				<h2 className="mb-4 text-2xl text-white font-bold">Editar perfil</h2>
+				{msg}
 				<form onSubmit={(e) => e.preventDefault()}>
 					<div>
 						<label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="nombre">
@@ -33,6 +61,8 @@ export default function EditProfileComponent() {
 							placeholder="Espacio para ingresar tu nombre"
 							id="nombre"
 							type="text"
+							value={nombre}
+							onValueChange={setNombre}
 						/>
 					</div>
 					<div>
@@ -48,6 +78,8 @@ export default function EditProfileComponent() {
 							placeholder="Espacio para ingresar tu apellido"
 							id="apellido"
 							type="text"
+							value={apellido}
+							onValueChange={setApellido}
 						/>
 					</div>
 					<div>
@@ -63,6 +95,8 @@ export default function EditProfileComponent() {
 							placeholder="Espacio para describir tu área de especialización"
 							id="area_especializacion"
 							type="text"
+							value={area_especializacion}
+							onValueChange={setAreaEspecializacion}
 						/>
 					</div>
 					<div className="mb-4">
@@ -78,6 +112,8 @@ export default function EditProfileComponent() {
 							placeholder="Espacio para indicar tu organización"
 							id="organizacion"
 							type="text"
+							value={organizacion}
+							onValueChange={setOrganizacion}
 						/>
 					</div>
 					<Button
@@ -86,6 +122,7 @@ export default function EditProfileComponent() {
 						className="w-full mb-2 mt-4 bg-green-500 hover:bg-green-600 dark:bg-green-700 dark:hover:bg-green-800"
 						type="submit"
 						onPress={() => onOpenChange(true)}
+						isDisabled={ !(nombre && apellido && organizacion && area_especializacion) }
 					>
 						Editar
 					</Button>
@@ -111,15 +148,16 @@ export default function EditProfileComponent() {
 									</ModalBody>
 									<ModalFooter>
 										<Link href="/perfil">
-											<Button color="danger" variant="light" onPress={onClose}>
+											<Button color="danger" variant="light" onPress={(onClose)}>
 												No
 											</Button>
 										</Link>
-										<Link href="/?">
-											<Button color="primary" onPress={onClose}>
-												Sí
-											</Button>
-										</Link>
+										<Button type="button" color="primary" onPress={()=>{
+											onSubmit()
+											onClose()
+										}}>
+											Sí
+										</Button>
 									</ModalFooter>
 								</>
 							)}

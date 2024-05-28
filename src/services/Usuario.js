@@ -24,5 +24,18 @@ export default {
         organizacion,
       }
     })
+  },
+  updatePerfil: async ({nombre, apellido, email, area_especializacion, organizacion}) =>{
+    await prisma.Usuario.update({
+      where: {
+        email,
+      },
+      data: {
+        nombre,
+        apellido,
+        area_especializacion,
+        organizacion,
+      },
+    })
   }
 }
