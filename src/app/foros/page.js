@@ -29,9 +29,14 @@ export default function Page() {
     return (
       <div class="flex w-full flex-col mx-5 overflow-y-scroll h-full ">
 
-        <div className="flex flex-row w-full my-6 mx-5 px-2">
-          <h1 className='font-semibold text-3xl'>FORO</h1>
-          <Button color="primary" onClick={handleChangeTheme}>aaaaaaaa</Button>
+        <div className="flex flex-row my-6 mx-5 px-2">
+          <div className="flex w-full justify-start">
+            <h1 className='font-semibold text-3xl'>FORO</h1>
+          </div>
+          <div className='flex flex-row w-fulljustify-end items-start'>
+            <Button color="primary" onClick={handleChangeTheme}>Cambiar tema</Button>
+          </div>
+          
         </div>
 
         <div className="flex flex-row w-full space-y-0 my-2 mx-5 px-2 ">
