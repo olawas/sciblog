@@ -3,15 +3,35 @@ import {Button} from '@nextui-org/button';
 import ForoPost from '@/components/ForoPost';
 import {useRouter} from 'next/navigation'
 import SearchBar from '@/components/SearchBar';
-
+import { useEffect,useState } from 'react';
 export default function Page() {
   const router =useRouter()
+
+  const[theme,setTheme]=useState(()=>{
+    if(window.matchMedia("(prefers-color-scheme: dark)").matches){
+      return "dark";
+    }
+    return "light";
+  });
+
+  useEffect(()=>{
+    if (theme=="dark"){
+      document.querySelector("html").classList.add("dark");
+    } else {
+      document.querySelector("html").classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleChangeTheme = () =>{
+    setTheme((prevTheme) => (prevTheme== "light" ? "dark" : "light"));
+  };
 
     return (
       <div class="flex w-full flex-col mx-5 overflow-y-scroll h-full ">
 
         <div className="flex flex-row w-full my-6 mx-5 px-2">
           <h1 className='font-semibold text-3xl'>FORO</h1>
+          <Button color="primary" onClick={handleChangeTheme}>aaaaaaaa</Button>
         </div>
 
         <div className="flex flex-row w-full space-y-0 my-2 mx-5 px-2 ">
