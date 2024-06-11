@@ -1,17 +1,34 @@
 "use client"
 import {useState, useEffect } from 'react'
-import { Input, Button } from '@nextui-org/react';
+import { Input, Button, Spinner } from '@nextui-org/react';
 import Link from 'next/link'; // Importa Link de Next.js
 import { Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
-import { useMutation } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import { updatePerfil } from '@/queries/perfil'
+import { getPerfilByEmail } from '@/queries/usuarios';
+import { useSession } from 'next-auth/react';
 export default function EditProfileComponent() {
 	const { isOpen, onOpenChange } = useDisclosure();
+	const session = useSession()
+	console.log(session.data)
+	const {data, isLoading} = useQuery('get-perfil', ()=>getPerfilByEmail({email: session.data.user.email}))
+
+	console.log('getted data', data)
 	const [nombre, setNombre] = useState('')
 	const [apellido, setApellido] =useState('')
 	const [organizacion, setOrganizacion] = useState('')
 	const [area_especializacion, setAreaEspecializacion] = useState('')
 	const [msg, setMsg] = useState(<></>)
+	useEffect(
+		()=>{
+			if(data?.data?.data){
+				setNombre(data?.data?.data.nombre)
+				setApellido(data?.data?.data.apellido)
+				setOrganizacion(data?.data?.data.organizacion)
+				setAreaEspecializacion(data?.data?.data.area_especializacion)
+			}
+		}, [data]
+	)
 	useEffect(
 		()=>{
 			if(nombre == '') setMsg(<p className="text-red-700"> Nombre no puede ser vacio </p>)
@@ -34,6 +51,7 @@ export default function EditProfileComponent() {
 			}
 		}
 	)
+	
 	const onSubmit = () =>{
 		perfilMutation.mutate({
 			nombre,
@@ -42,6 +60,7 @@ export default function EditProfileComponent() {
 			area_especializacion
 		})
 	}
+	if(isLoading) return <Spinner size="large" color="primary" className="flex justify-center items-center h-screen w-full" />
 	return (
 		<div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
 			<div className="w-full max-w-lg rounded-lg bg-white p-8 shadow-lg dark:bg-gray-950">
