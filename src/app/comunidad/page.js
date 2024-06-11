@@ -3,7 +3,7 @@ import {Button} from '@nextui-org/button';
 import SearchBar from '@/components/SearchBar';
 import ComunidadPost from '@/components/ComunidadPost';
 import {useRouter} from 'next/navigation'
-import ThemeSwitch from "@/components/ThemeSwitch";
+
 
 export default function Page() {
     const router =useRouter()
@@ -17,9 +17,7 @@ export default function Page() {
                         <div className='flex justify-start w-full'>
                             <h1 className='font-semibold text-3xl'>Comunidad</h1>
                         </div>
-                        <div className="flex justify-end items-start w-full "> 
-                            <ThemeSwitch></ThemeSwitch>
-                        </div>
+                        
                     </div>
                     
                     

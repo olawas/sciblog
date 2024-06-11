@@ -28,7 +28,7 @@ export default function Home() {
             <SearchBar className='w-full'/>
           </div>
           <div className='flex flex-row w-full justify-end items-start mr-4'>
-           <ThemeSwitch></ThemeSwitch>
+           
           </div>
         </div>
         <div className='w-full justify-center flex flex-row'>
