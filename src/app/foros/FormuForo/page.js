@@ -5,7 +5,7 @@ import { Input } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/react";
 import { useMutation } from 'react-query'
 import { crearTema} from '@/queries/foro'
-import ThemeSwitch from "@/components/ThemeSwitch";
+
 
 export default function Page() {
 	const [nombre, setNombre] = useState('')
@@ -32,9 +32,7 @@ export default function Page() {
           		<div className='flex justify-start w-1/2 my-6 mx-6 px-2'>
             		<h1 className='font-semibold text-3xl'>NUEVO TEMA</h1>
           		</div>
-          		<div className="flex justify-end w-1/2 mr-7"> 
-            		<ThemeSwitch></ThemeSwitch>
-          		</div>
+          		
        	 	</div>
 			<div className="flex flex-row w-full my-6 mx-5 px-2">
 				<form class="w-full">

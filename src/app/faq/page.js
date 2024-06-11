@@ -1,14 +1,9 @@
-'use client'
-import ThemeSwitch from "@/components/ThemeSwitch";
-
 export default function Page() {
   return (
     <div className="bg-purple p-8 w-full">
       <div className="flex flex-row">
         <h1 className="text-5xl justify-start font-bold mb-6 w-full">Preguntas frecuentes</h1>
-        <div className="flex justify-end items-start"> 
-            <ThemeSwitch></ThemeSwitch>
-        </div>
+        
       </div>
       
       
