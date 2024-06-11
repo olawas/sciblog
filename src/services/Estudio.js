@@ -2,30 +2,30 @@ import prisma from "@/libs/db"
 
 // use `prisma` in your application to read and write data in your DB
 export default {
-  findMany: async (busqueda) => {
+  create: async ({titulo, descripcion, tags}) => {
+    console.log('n',tags)
+    await prisma.Estudio.create({
+      data:{
+        titulo,
+        descripcion,
+        tags,
+        datasetId: 1, // por ahora es un numero cualquiera
+      }
+    })
+  },
+  findAll: async ({tags}) => {
     try{
-      const myArray = busqueda.split(" ");
-      return await prisma.estudio.findMany({
+      //console.log('n',tags)
+      return await prisma.Estudio.findMany({
         where: {
           tags: {
-            in: myArray,
-          },
-        },
+            hasSome: tags,
+          }
+        }
       })
     }
     catch(e){
       return null
     }
-  },
-  //register: async ({nombre, apellido, email, area_especializacion, password}) => {
-  //  await prisma.Usuario.create({
-  //    data:{
-  //      nombre,
-  //      apellido,
-  //      email,
-  //      area_especializacion,
-  //      password
-  //    }
-  //  })
-  //}
+  }
 }
