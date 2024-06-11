@@ -1,7 +1,7 @@
 import Image from 'next/image'
 const ComunidadFoto = ({className, titulo, area, description}) => {
   return (
-    <div className='w-4/5 space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 bg-violet-300'>
+    <div className='w-full space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 bg-tarjeta'>
       <div className='flex flex-col'>
         <div className="border-primary-bg space-y-4 mx-5"> {titulo}</div>
 

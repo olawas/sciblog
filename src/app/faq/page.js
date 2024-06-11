@@ -1,36 +1,40 @@
+'use client'
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 export default function Page() {
   return (
     <div className="bg-purple p-8 w-full">
-      <h1 className="text-5xl font-bold mb-6">Preguntas frecuentes</h1>
+      <div className="flex flex-row">
+        <h1 className="text-5xl justify-start font-bold mb-6 w-full">Preguntas frecuentes</h1>
+        <div className="flex justify-end items-start"> 
+            <ThemeSwitch></ThemeSwitch>
+        </div>
+      </div>
+      
+      
       <div className="space-y-4 w-full">
-        <details className="p-4 bg-purple-200 rounded w-full">
-          <summary className="text-xl font-semibold cursor-pointer w-full">¿Como puedo comentar una publicacion?</summary>
-          <p className="pt-2 w-full">
-            Se puede comentar una publicacion seleccionando la publicacion, dirigiendose hacia las opciones de abajo y
-            seleccionar la segunda opcion(la derecha del corazon).
+        <details className="p-4 rounded w-full bg-purpura">
+          <summary className="text-xl font-semibold cursor-pointer w-full ">¿Cómo puedo comentar una publicación?</summary>
+          <p className="pt-2 w-full ">
+            Se puede comentar una publicación seleccionando la publicación, dirigiéndose hacia las opciones de abajo y seleccionando la segunda opción (a la derecha del corazón).
           </p>
         </details>
-        <details className="p-4 bg-purple-200 rounded">
-          <summary className="text-xl font-semibold cursor-pointer">¿Como puedo unirme a un grupo?</summary>
+        <details className="p-4 bg-purpura rounded">
+          <summary className="text-xl font-semibold cursor-pointer">¿Cómo puedo unirme a un grupo?</summary>
           <p className="pt-2">
-            Para unirse a un grupo, se tiene que dirigir al apartado de comunidad, seleccionar un grupo, y luego hacer
-            click al boton de unirse.
+            Para unirse a un grupo, se debe dirigir al apartado de comunidad, seleccionar un grupo y luego hacer clic en el botón de unirse.
           </p>
         </details>
-        <details className="p-4 bg-purple-200 rounded">
-          <summary className="text-xl font-semibold cursor-pointer">¿Como puedo crear una publicacion?</summary>
+        <details className="p-4 bg-purpura rounded">
+          <summary className="text-xl font-semibold cursor-pointer">¿Cómo puedo crear una publicación?</summary>
           <p className="pt-2">
-            Para crear un publicacion se tiene que estar en el inicio de la red social, puede ir al inicio haciendo
-            click a la izquierda en la opcion de inicio, luego hacer click en el boton crear publicacion y rellenar
-            los datos que se soliciten.
+            Para crear una publicación se debe estar en el inicio de la red social. Puede ir al inicio haciendo clic a la izquierda en la opción de inicio, luego hacer clic en el botón 'Crear publicación' y rellenar los datos que se soliciten
           </p>
         </details>
-        <details className="p-4 bg-purple-200 rounded">
-          <summary className="text-xl font-semibold cursor-pointer">¿Como puedo cerrar sesion?</summary>
+        <details className="p-4 bg-purpura rounded">
+          <summary className="text-xl font-semibold cursor-pointer">¿Cómo puedo cerrar sesión?</summary>
           <p className="pt-2">
-            para cerrar sesion solo tienes que dirigirte a las opciones de la izquierda ,abajo , y hacer click en cerrar
-            sesion
+            Para cerrar sesión, solo tienes que dirigirte a la opción de la derecha, arriba, y hacer clic en 'Cerrar Sesión'.
           </p>
         </details>
       </div>

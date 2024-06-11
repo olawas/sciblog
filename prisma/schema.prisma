@@ -12,11 +12,12 @@ model Usuario {
   nombre    String?
   apellido  String?
   email    String @unique
-  password String
   area_especializacion String
+  organizacion String?
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
   dataSets Dataset[]
+  temas Tema[]
     //useridfk Usuario @relation(fields: [id], references: [id])
 }
 
@@ -40,8 +41,9 @@ model Estudio{
   datasetId Int
   dataSet Dataset  @relation(fields: [datasetId], references: [id])
   comentarios Comentario[]
+  tags String[]
   createdAt DateTime @default(now())//Fecha Creación
-  updateAt DateTime @updatedAt
+  updateAt DateTime @updatedAt 
 }
 model Comentario {
   id           Int    @id @default(autoincrement())
@@ -55,10 +57,20 @@ model Comentario {
 }
 
 model Respuesta {
-    id Int @id  @default(autoincrement())
-    content String?
-    comentarioId  Int
-    comentario Comentario @relation(fields:[comentarioId], references: [id])
-    createdAt DateTime @default(now())
-    updateAt DateTime  @updatedAt
+  id Int @id  @default(autoincrement())
+  content String?
+  comentarioId  Int
+  comentario Comentario @relation(fields:[comentarioId], references: [id])
+  createdAt DateTime @default(now())
+  updateAt DateTime  @updatedAt
+}
+
+model Tema {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  contenido String?
+  usuarioId Int
+  usuario_tema Usuario @relation(fields: [usuarioId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

@@ -8,10 +8,11 @@ export default withAuth(
     if( !isApiRoute(req.nextUrl.pathname)){
       if(req.nextauth.token){
         if(req.nextauth.token.registered === false && req.nextUrl.pathname !=='/registro'){
+          console.log('redirecting')
           return NextResponse.redirect(req.nextUrl.origin+'/registro')
         }
         if(req.nextUrl.pathname ==='/registro' && req.nextauth.token.registered === true){
-          console.log('deberia redi9')
+
           return NextResponse.redirect(req.nextUrl.origin+'/')
         }
       }

@@ -9,7 +9,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 export default function Page() {
 
     return (
-        <div className="flex w-full flex-col mx-0 overflow-y-scroll h-full bg-indigo-100">
+        <div className="flex w-full flex-col mx-0 overflow-y-scroll h-full">
             <div className="flex flex-row w-full my-6 mx-5 px-2">
                 <h1 className="font-semibold text-3xl">NUEVO GRUPO</h1>
             </div>

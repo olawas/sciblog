@@ -22,6 +22,9 @@ module.exports = {
             'primary-bg': '#0E102F',
             'on-primary': '#F7EEFF',
             'on-secondary': '#010201',
+            'tarjeta':'#c4b5fd',
+            'purpura':'#e9d5ff',
+
             background: "#FBFBFD", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {
@@ -39,6 +42,9 @@ module.exports = {
             'terciary-bg': '#C8B2DE',
             'on-primary': '#EFEBFE',
             'on-secondary': '#EFEBFE',
+            'tarjeta':'#4c1d95',
+            'purpura':'#6b21a8',
+
             background: "#07091E", // or DEFAULT
             foreground: "#ECEDEE", // or 50 to 900 DEFAULT
             primary: {

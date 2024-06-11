@@ -1,7 +1,7 @@
 import Image from 'next/image'
 const Fotoforo = ({className, nombre, description}) => { 
   return (
-    <div className='w-full space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 bg-violet-300'>
+    <div className='w-full space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 bg-tarjeta'>
         <div className=' flex flex-col w-1/3 justify-start space-y-4 items-center'>
         <Image 
             width={130}
