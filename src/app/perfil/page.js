@@ -68,7 +68,7 @@ const Componente = () => {
 
             <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
               <ModalContent>
-                <ModalHeader className="flex flex-col">Compartir Enlace</ModalHeader>
+                <ModalHeader className="flex flex-col bg-azul">Compartir Enlace</ModalHeader>
                 <ModalBody>
                   <label
                     className="text-md text-gray-500 mb-4 cursor-pointer"
@@ -90,7 +90,7 @@ const Componente = () => {
       </div>
 
       {/* Segunda columna */}
-      <Card>
+      <Card className=" bg-purpura">
         <CardBody>
         <div className="flex justify-center mx-6 ">
           
@@ -99,7 +99,7 @@ const Componente = () => {
               <DropdownTrigger>
                 <Button
                   variant="bordered"
-                  className="w-full"
+                  className="w-full bg-tarjeta"
                 >
                   Publicaciones Guardadas
                 </Button>
@@ -123,7 +123,7 @@ const Componente = () => {
               <DropdownTrigger>
                 <Button
                   variant="bordered"
-                  className="w-full"
+                  className="w-full bg-tarjeta"
                 >
                   Mis Publicaciones
                 </Button>
