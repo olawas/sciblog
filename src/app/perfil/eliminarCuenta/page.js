@@ -1,6 +1,6 @@
 "use client"
 import { Button } from '@nextui-org/react';
-import { Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
+import { Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 
 import Link from 'next/link'; // Importa Link de Next.js
 

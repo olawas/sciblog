@@ -9,16 +9,16 @@ const PostCarousel = ({className}) => {
         <div className="relative overflow-x-hidden w-4/5 ">
           <div className="flex -mx-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title="Cancer" description="Mucho cancer en chile"/>
+              <MiniPost title={<strong>Tendencias en Uso de Tecnología Wearable en el Área de la Salud:</strong>} description=" Las tendencias emergentes en el uso de tecnología wearable"/>
             </div>  
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title="Diabetes en watones" description="No comas tanto amigo, deja los azucares"/>
+              <MiniPost title={<strong>Desafíos y Oportunidades en Salud Mental Infantil</strong>} description=" Desafíos actuales en el diagnóstico, tratamiento y prevención"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title="Calambre ahhh" description="Como evitar los calambritos"/>
+              <MiniPost title={<strong>Impacto de la Telemedicina en la Atención Primaria de Salud:</strong>} description=" Este informe analiza cómo la implementación de la telemedicina"/>
             </div>
             <div className="w-1/3 px-4 flex-shrink-0 snap-center">
-              <MiniPost title="Muerte subdita en chile" description="Hay gente que se muere porque si"/>
+              <MiniPost title={<strong>Evaluación de la Efectividad de Programas de Vacunación:</strong>} description=" Evalúa la efectividad de los programas de vacunación"/>
             </div>
           </div>  
         </div>

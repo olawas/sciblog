@@ -24,11 +24,11 @@ const DailyPost = ({className}) => {
           </div>
           <div className='text-on-primary bg-primary-bg w-full flex flex-row min-h-content p-2'>
             <div className='flex flex-col w-1/4 m-6'>
-              <p className='text-xl'>Raúl Arredondo</p>
+              <p className='text-xl'>José Luis Romero</p>
               <p>Nutricionista</p>
             </div>
             <div className='w-3/4 m-6'>
-              <p>Este estudio realizado en marzo del 2023 nos desmuestra como a diario mueren mas 15000 estudiantes por excesivas tareas que dejan los docentes. Se puede ver que existe una correlación entre el suicidio joven y las clases de la miriam.</p>
+              <p>Este informe examina las tendencias actuales en los patrones alimentarios de la población, incluyendo el consumo de alimentos procesados, ultraprocesados, y la disponibilidad de opciones saludables. Se analiza el impacto de estos patrones en la salud pública, incluyendo la prevalencia de enfermedades crónicas como la obesidad, diabetes y enfermedades cardiovasculares. Además, se identifican estrategias efectivas para promover una alimentación saludable y combatir la malnutrición en todas sus formas.</p>
             </div>
           </div>
         </div>

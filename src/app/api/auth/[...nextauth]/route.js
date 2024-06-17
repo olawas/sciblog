@@ -1,3 +1,4 @@
+import Usuario from "@/services/Usuario";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google"
 const handler = NextAuth({
@@ -8,6 +9,22 @@ const handler = NextAuth({
     })
   ],
   secret: process.env.JWT_SECRET,
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      return token
+    },
+    session: async ({ session, token }) => {
+      if (token){
+        const res = await Usuario.findByEmail(token.email)
+        
+        if (res) token.registered = true
+        else token.registered = false
+        session.user.registered = token.registered
+        session.user = {...session.user, ...res}
+      }
+      return session
+    }
+  }
 })
 
 export {handler as GET, handler as POST}

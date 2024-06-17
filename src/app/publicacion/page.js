@@ -24,7 +24,7 @@ export default function Component() {
         <div className="bg-white p-8 w-full">
             <div className="flex w-full">
                 <div className="w-1/3">
-                    <div className="font-bold text-lg">Doofenshmirtz</div>
+                    <div className="font-bold text-lg">José Luis S.</div>
                     <div className="text-sm">Doctor</div>
                     <div className="text-sm">Clínica Universitaria</div>               
                 </div>
@@ -48,7 +48,7 @@ export default function Component() {
                 </div>
             </div>
             <div className="flex w-full justify-center h-2/4 mb-24">
-                <img src="/pre2.png" style={{ width: '700px', height: '400px' }} />
+                <img src="/pre2.png" className="rounded-md" style={{ width: '700px', height: '400px' }} />
             </div>
             <div className="flex w-full mb-4 space-x-4">
                 <div className="flex-grow">

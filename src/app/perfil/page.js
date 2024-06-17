@@ -8,6 +8,8 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Card, Ca
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalContent, useDisclosure } from '@nextui-org/react';
 import { TrashIcon, PencilIcon, ShareIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'; // Importa Link de Next.js
+import ThemeSwitch from "@/components/ThemeSwitch";
+import { useSession } from "next-auth/react";
 
 const Componente = () => {
   const { isOpen, onOpenChange } = useDisclosure();
@@ -21,9 +23,12 @@ const Componente = () => {
       console.error('No se pudo copiar el texto');
     });
   };
-
+  const {data, status} = useSession()
+  if(status != 'authenticated') return <div className="w-full h-44 flex justify-center items-center">
+    <p className="text-center align-middle text-4xl text-slate-800 font-semibold w-full"> Debe iniciar sesión para ver su perfil</p>
+  </div>
   return (
-    <div className="bg-white p-8 w-full">
+    <div className=" p-8 w-full">
       {/* Primera columna con 3 divs en fila */}
       <div className="flex w-full mb-24">
         <div className="w-1/3 space-x-1">
@@ -38,25 +43,18 @@ const Componente = () => {
             </button>
           </Link>
           <div>
-            <div className="font-bold text-lg">Doofenshmirtz</div>
-            <div className="text-sm">Doctor</div>
-            <div className="text-sm">Clínica Universitaria</div>
+            <div className="font-bold text-lg">{data.user.nombre + ' ' +data.user.apellido}</div>
+            <div className="text-sm">{ data.user.area_especializacion}</div>
+            <div className="text-sm">{ data.user.organizacion }</div>
           </div>
         </div>
         <div className="flex w-1/3 justify-center">
-          <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" className="w-20 h-20 text-large" />
+          <Avatar src={data.user.image} className="w-20 h-20 text-large"/>
         </div>
 
         <div className="flex-col w-1/3 space-y-2">
           <div className="flex justify-end"> 
-            <Select
-              items={animals}
-              label="Elegir Tema"
-              placeholder="Selecciona un tema"
-              className="max-w-xs"
-            >
-              {(animal) => <SelectItem key={animal.value}>{animal.label}</SelectItem>}
-            </Select>
+            <ThemeSwitch></ThemeSwitch>
           </div>
           <div className="flex justify-end space-x-2">
             <Button
