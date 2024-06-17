@@ -1,4 +1,5 @@
 import prisma from "@/libs/db"
+import { getPerfilByEmail } from "@/queries/usuarios"
 
 // use `prisma` in your application to read and write data in your DB
 export default {
@@ -14,6 +15,29 @@ export default {
       return null
     }
   },
+  getPerfilByEmail: async (email) => await prisma.usuario.findUnique({
+        where: {
+          email
+        },
+        select: {
+          area_especializacion: true,
+          nombre: true,
+          apellido: true,
+          organizacion: true
+        },
+      }),
+  getPerfilById: async (id) => await prisma.usuario.findUnique({
+        where: {
+          id
+        },
+        select: {
+          area_especializacion: true,
+          nombre: true,
+          apellido: true,
+          organizacion: true
+        },
+      })
+  ,
   register: async ({nombre, apellido, email, area_especializacion, organizacion}) => {
     await prisma.Usuario.create({
       data:{

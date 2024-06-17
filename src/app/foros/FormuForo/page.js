@@ -6,7 +6,6 @@ import { Textarea } from "@nextui-org/react";
 import { useMutation } from 'react-query'
 import { crearTema} from '@/queries/foro'
 
-
 export default function Page() {
 	const [nombre, setNombre] = useState('')
 	const [contenido, setContenido] = useState('')

@@ -29,7 +29,7 @@ model Dataset {
   tipo String?
   userId  Int
   usuario_creador Usuario @relation(fields: [userId], references: [id])
-  estudios Estudio[]
+  
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
@@ -39,7 +39,7 @@ model Estudio{
   titulo    String   @db.VarChar(255)
   descripcion String?
   datasetId Int
-  dataSet Dataset  @relation(fields: [datasetId], references: [id])
+
   comentarios Comentario[]
   tags String[]
   createdAt DateTime @default(now())//Fecha Creación
