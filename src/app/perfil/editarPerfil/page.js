@@ -62,8 +62,8 @@ export default function EditProfileComponent() {
 	}
 	if(isLoading) return <Spinner size="large" color="primary" className="flex justify-center items-center h-screen w-full" />
 	return (
-		<div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#3f3d56] px-4">
-			<div className="w-full max-w-lg rounded-lg p-8 shadow-lg border border-gray-300 bg-perfil">
+		<div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#323048] px-4">
+			<div className="w-full max-w-lg rounded-lg p-8 shadow-lg border border-gray-300 bg-azul">
 				<h2 className="mb-4 text-2xl text-foreground font-bold dark:text-white">Editar perfil</h2>
 				{msg}
 				<form onSubmit={(e) => e.preventDefault()}>

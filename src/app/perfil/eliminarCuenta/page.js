@@ -8,8 +8,8 @@ export default function Component() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
-        <div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
-            <div className="w-full max-w-md rounded-lg border border-gray-300 bg-perfil">
+        <div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#323048] px-4">
+            <div className="w-full max-w-md rounded-lg border border-gray-300 bg-azul">
                 <h2 className="mb-4 text-2xl text-white font-bold">Deshabilitar cuenta</h2>
                 <p className="mb-6 text-foreground ">
                     Ingresa tu correo electrónico y contraseña para confirmar la eliminación de tu cuenta.

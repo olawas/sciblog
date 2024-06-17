@@ -7,7 +7,7 @@ export default function Component() {
 
   return (
     <div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#3f3d56] px-4">
-      <div className="w-full max-w-xl rounded-lg bg-perfil p-8 shadow-lg border border-gray-300 dark:bg-gray-950">
+      <div className="w-full max-w-xl rounded-lg bg-azul p-8 shadow-lg border border-gray-300 dark:bg-gray-950">
         <h2 className="mb-4 text-2xl font-bold text-primary dark:text-white">Nueva Publicación</h2>
         <form>
           <div className="mb-4"> {/* Agregado mb-4 para espacio debajo del Input */}
