@@ -9,29 +9,29 @@ export default function Component() {
 
     return (
         <div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
-            <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg dark:bg-gray-950">
+            <div className="w-full max-w-md rounded-lg border border-gray-300 bg-perfil">
                 <h2 className="mb-4 text-2xl text-white font-bold">Deshabilitar cuenta</h2>
-                <p className="mb-6 text-gray-500 dark:text-gray-400">
+                <p className="mb-6 text-foreground ">
                     Ingresa tu correo electrónico y contraseña para confirmar la eliminación de tu cuenta.
                 </p>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div>
-                        <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="email">
+                        <label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="email">
                             Correo electrónico
                         </label>
                         <input
-                            className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-100 dark:placeholder-gray-400"
+                            className="block w-full rounded-md border border-gray-300 px-3 py-2 text-purpura placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-100 dark:placeholder-gray-400"
                             id="email"
                             placeholder="ejemplo@correo.com"
                             type="email"
                         />
                     </div>
                     <div>
-                        <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="password">
+                        <label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="password">
                             Contraseña
                         </label>
                         <input
-                            className="block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-100 dark:placeholder-gray-400"
+                            className="block w-full rounded-md border border-gray-300 px-3 py-2 text-purpura placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-100 dark:placeholder-gray-400"
                             id="password"
                             placeholder="••••••••"
                             type="password"

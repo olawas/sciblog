@@ -62,13 +62,13 @@ export default function EditProfileComponent() {
 	}
 	if(isLoading) return <Spinner size="large" color="primary" className="flex justify-center items-center h-screen w-full" />
 	return (
-		<div className="flex h-full w-full items-center justify-center bg-[#3f3d56] px-4">
-			<div className="w-full max-w-lg rounded-lg bg-white p-8 shadow-lg dark:bg-gray-950">
-				<h2 className="mb-4 text-2xl text-white font-bold">Editar perfil</h2>
+		<div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#3f3d56] px-4">
+			<div className="w-full max-w-lg rounded-lg p-8 shadow-lg border border-gray-300 bg-perfil">
+				<h2 className="mb-4 text-2xl text-foreground font-bold dark:text-white">Editar perfil</h2>
 				{msg}
 				<form onSubmit={(e) => e.preventDefault()}>
 					<div>
-						<label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="nombre">
+						<label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="nombre">
 							Nombre
 						</label>
 						<Input
@@ -85,7 +85,7 @@ export default function EditProfileComponent() {
 						/>
 					</div>
 					<div>
-						<label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="nombre">
+						<label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="nombre">
 							Apellido
 						</label>
 						<Input
@@ -102,7 +102,7 @@ export default function EditProfileComponent() {
 						/>
 					</div>
 					<div>
-						<label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="areaTrabajo">
+						<label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="areaTrabajo">
 							Área de especialización
 						</label>
 						<Input
@@ -119,7 +119,7 @@ export default function EditProfileComponent() {
 						/>
 					</div>
 					<div className="mb-4">
-						<label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300" htmlFor="lugarTrabajo">
+						<label className="mb-2 block text-sm font-medium text-foreground dark:text-gray-300" htmlFor="lugarTrabajo">
 							Organización
 						</label>
 						<Input
