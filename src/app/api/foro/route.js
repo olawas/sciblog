@@ -1,5 +1,3 @@
-import db from '@/libs/db';
-
 import { NextResponse } from 'next/server';
 import Foro from '@/services/Foro'
 export async function POST(req) {
@@ -15,6 +13,17 @@ export async function POST(req) {
 	} catch (e) {
 		console.error('SERVER ERROR CREANDO FORO', e)
 		return NextResponse.json({ message: 'error creando tema de foro'}, { status: 500 });
+	}
+}
+
+export async function DELETE(req) {
+	try {
+	  const { idT } = await req.json();
+	  const etema = await Foro.delete({ idT });
+	  return NextResponse.json({message: 'Tema eliminado correctamente',data: etema,},{ status: 200 });
+	} catch (e) {
+	  console.error('SERVER ERROR BORRANDO FORO', e);
+	  return NextResponse.json({ message: 'Error eliminando tema de foro' },{ status: 500 });
 	}
 }
 

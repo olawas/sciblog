@@ -5,8 +5,18 @@ const crearTema = async ({nombre, contenido}) =>{
   return response
 }
 
+const borrarTema = async ({idT}) =>{
+  try {
+    const response = await Axios.delete('/foro', { data: { idT } });
+    return response; 
+  } catch (error) {
+    console.error("Error al intentar eliminar el tema:", error);
+    throw error; 
+  }
+}
+
 const obtenerTemas = async () =>{
   const response = await Axios.get('/foro', {  } )
   return response
 }
-export { crearTema , obtenerTemas}
+export { crearTema , obtenerTemas,borrarTema}

@@ -25,5 +25,14 @@ export default {
         usuario_tema: true
       }
     })
+  },
+  delete: async ({idT}) => {
+    console.log("aaaa", idT);
+    return await prisma.Tema.delete({
+      where: {
+        id:idT,
+      },
+    });
   }
+  
 }
