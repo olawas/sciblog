@@ -9,6 +9,7 @@ const Fotoforo = ({ className, nombre, description, idT, correo, usuarioCorreo }
     mutationFn: (data) => borrarTema(data),
     onSuccess: () => {
       console.log('Tema eliminado correctamente');
+      window.location.reload();
     },
     onError: (error) => {
       console.error('Error al eliminar el tema', error);
