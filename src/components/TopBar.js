@@ -9,9 +9,9 @@ const TopBar = ({className, options=[], optionGetLabel=(val)=>val, optionGetHref
   const {data, status}  = useSession()
   return (
     <div className={className}>
-      <div className="flex flex-row h-full w-full items-center font-bold ">
+      <div className="flex flex-row h-full w-full items-center font-bold">
 
-        <div className='w-2/3 flex justify-center items-center'>
+        <div className='w-2/4 flex justify-center items-center'>
           <LogoColor className="w-12 h-12"/>
           SCIBLOG
         </div>
