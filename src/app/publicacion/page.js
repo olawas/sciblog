@@ -21,7 +21,7 @@ export default function Component() {
         });
     };
     return (
-        <div className="bg-white dark:bg-gray-950 p-8 w-full">
+        <div className="bg-background dark:bg-gray-950 p-8 w-full">
             <div className="flex w-full">
                 <div className="w-1/3">
                     <div className="font-bold text-lg dark:text-white">José Luis S.</div>
@@ -40,7 +40,7 @@ export default function Component() {
                     </Button>
 
                     <Modal isOpen={isModalOneOpen} onOpenChange={setModalOneOpen}>
-                        <ModalContent>
+                        <ModalContent className='bg-azul'>
                             <ModalHeader>Descarga Realizada</ModalHeader>
                         </ModalContent>
                     </Modal>
@@ -53,7 +53,7 @@ export default function Component() {
             </div>
             <div className="flex w-full mb-4 space-x-4">
                 <div className="flex-grow">
-                    <label htmlFor="description" className="text-md font-medium text-gray-700 dark:text-gray-300">Descripción</label>
+                    <label htmlFor="description" className="text-md font-medium text-foreground dark:text-gray-300">Descripción</label>
                 </div>
 
                 <div className="flex space-x-2">
@@ -68,10 +68,10 @@ export default function Component() {
                     </Button>
                     <Modal isOpen={isModalTwoOpen} onOpenChange={setModalTwoOpen}>
                         <ModalContent>
-                            <ModalHeader className="flex flex-col dark:text-white">Compartir Enlace</ModalHeader>
-                            <ModalBody>
+                            <ModalHeader className="flex flex-col bg-azul dark:text-white">Compartir Enlace</ModalHeader>
+                            <ModalBody className='bg-azul'>
                                 <label
-                                    className="text-md text-gray-500 mb-4 cursor-pointer dark:text-gray-300"
+                                    className="text-md text-gray-500  mb-4 cursor-pointer dark:text-gray-300"
                                     onClick={() => copyToClipboard('google.com')}
                                 >
                                     google.com
@@ -90,7 +90,7 @@ export default function Component() {
                         <BookmarkIcon className="h-5 w-5 ml-2" />
                     </Button>
                     <Modal isOpen={isModalThreeOpen} onOpenChange={setModalThreeOpen}>
-                        <ModalContent>
+                        <ModalContent className='bg-azul'>
                             <ModalHeader className="dark:text-white">Publicacion Guardada</ModalHeader>
                         </ModalContent>
                     </Modal>
@@ -98,7 +98,7 @@ export default function Component() {
             </div>
 
             <div className="flex w-full mb-24">
-                <label htmlFor="description" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <label htmlFor="description" className="text-sm font-medium text-foreground dark:text-gray-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec
                     egestas est. Maecenas turpis sem, fermentum ac rhoncus at, pretium ac est. Pellentesque
                     habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin a nisl
