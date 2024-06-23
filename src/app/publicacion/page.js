@@ -21,15 +21,15 @@ export default function Component() {
         });
     };
     return (
-        <div className="bg-white p-8 w-full">
+        <div className="bg-white dark:bg-gray-950 p-8 w-full">
             <div className="flex w-full">
                 <div className="w-1/3">
-                    <div className="font-bold text-lg">José Luis S.</div>
-                    <div className="text-sm">Doctor</div>
-                    <div className="text-sm">Clínica Universitaria</div>               
+                    <div className="font-bold text-lg dark:text-white">José Luis S.</div>
+                    <div className="text-sm dark:text-gray-300">Doctor</div>
+                    <div className="text-sm dark:text-gray-300">Clínica Universitaria</div>
                 </div>
                 <div className="flex w-1/3 justify-center">
-                    <h2 className="mb-4 text-2xl font-bold">Nombre de la Publicación</h2>
+                    <h2 className="mb-4 text-2xl font-bold dark:text-white">Nombre de la Publicación</h2>
                 </div>
                 <div className="w-1/3 flex justify-end items-start space-x-2">
                     <Button
@@ -38,28 +38,29 @@ export default function Component() {
                     >
                         Descargar Dataset <ArrowDownTrayIcon className="h-5 w-5" />
                     </Button>
-                    
+
                     <Modal isOpen={isModalOneOpen} onOpenChange={setModalOneOpen}>
                         <ModalContent>
-                            <ModalHeader>Descarga Realizada</ModalHeader>                            
-                        </ModalContent>                        
+                            <ModalHeader>Descarga Realizada</ModalHeader>
+                        </ModalContent>
                     </Modal>
                     <CommentsModal />
                 </div>
             </div>
+
             <div className="flex w-full justify-center h-2/4 mb-24">
                 <img src="/pre2.png" className="rounded-md" style={{ width: '700px', height: '400px' }} />
             </div>
             <div className="flex w-full mb-4 space-x-4">
                 <div className="flex-grow">
-                    <label htmlFor="description" className="text-md font-medium text-gray-700">Descripción</label>
+                    <label htmlFor="description" className="text-md font-medium text-gray-700 dark:text-gray-300">Descripción</label>
                 </div>
 
-                <div className="flex space-x-2"> {/* Añade esta clase aquí */}
+                <div className="flex space-x-2">
                     <Button
                         auto
                         rounded
-                        className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white"
+                        className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white dark:bg-green-700 dark:hover:bg-green-800"
                         onPress={() => setModalTwoOpen(true)}
                     >
                         Compartir Publicación
@@ -67,22 +68,22 @@ export default function Component() {
                     </Button>
                     <Modal isOpen={isModalTwoOpen} onOpenChange={setModalTwoOpen}>
                         <ModalContent>
-                            <ModalHeader className="flex flex-col">Compartir Enlace</ModalHeader>
+                            <ModalHeader className="flex flex-col dark:text-white">Compartir Enlace</ModalHeader>
                             <ModalBody>
                                 <label
-                                    className="text-md text-gray-500 mb-4 cursor-pointer"
+                                    className="text-md text-gray-500 mb-4 cursor-pointer dark:text-gray-300"
                                     onClick={() => copyToClipboard('google.com')}
                                 >
                                     google.com
                                 </label>
-                                {copied && <div className="text-sm text-green-500">Copiado</div>}
+                                {copied && <div className="text-sm text-green-500 dark:text-green-400">Copiado</div>}
                             </ModalBody>
                         </ModalContent>
                     </Modal>
                     <Button
                         auto
                         rounded
-                        className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white"
+                        className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white dark:bg-blue-700 dark:hover:bg-blue-800"
                         onPress={() => setModalThreeOpen(true)}
                     >
                         Guardar Publicación
@@ -90,20 +91,22 @@ export default function Component() {
                     </Button>
                     <Modal isOpen={isModalThreeOpen} onOpenChange={setModalThreeOpen}>
                         <ModalContent>
-                            <ModalHeader>Publicacion Guardada</ModalHeader>
+                            <ModalHeader className="dark:text-white">Publicacion Guardada</ModalHeader>
                         </ModalContent>
                     </Modal>
                 </div>
             </div>
 
             <div className="flex w-full mb-24">
-                <label htmlFor="description" className="text-sm font-medium text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec
+                <label htmlFor="description" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec
                     egestas est. Maecenas turpis sem, fermentum ac rhoncus at, pretium ac est. Pellentesque
                     habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin a nisl
                     lobortis, tristique purus ut, aliquam leo. Sed vel mauris varius, mollis leo eu, venenatis dui.
                     Nulla efficitur mi a maximus vulputate. Sed sem ante, sagittis vitae vestibulum sed, aliquam
                     vitae lacus. Vestibulum ultrices pharetra massa quis ullamcorper. In semper vulputate orci id auctor.
-                    Nunc iaculis augue quis neque aliquet cursus. Vivamus fermentum aliquam massa at consequat.</label>
+                    Nunc iaculis augue quis neque aliquet cursus. Vivamus fermentum aliquam massa at consequat.
+                </label>
             </div>
             
         </div>

@@ -79,12 +79,7 @@ const Componente = () => {
                   {copied && <div className="text-sm text-green-500">Copiado</div>}
                 </ModalBody>
               </ModalContent>
-            </Modal>
-            <Link href="/perfil/editarEmail">
-              <Button rounded-sm className="text-white bg-blue-500">
-                <EnvelopeIcon className="h-5 w-5" /> Editar Email
-              </Button>
-            </Link>
+            </Modal>           
           </div>
         </div>
       </div>

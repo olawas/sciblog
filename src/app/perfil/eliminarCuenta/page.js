@@ -5,11 +5,11 @@ import { Modal, ModalHeader, ModalContent, ModalBody, ModalFooter, useDisclosure
 import Link from 'next/link'; // Importa Link de Next.js
 
 export default function Component() {
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const { isOpen, onOpenChange } = useDisclosure();
 
     return ( 
         <div className="flex h-full w-full items-center justify-center bg-background dark:bg-[#323048] px-4">
-            <div className="w-full max-w-md rounded-lg border border-gray-300 bg-azul">
+            <div className="w-full max-w-lg rounded-lg p-8 shadow-lg border border-gray-300 bg-azul">
                 <h2 className="mb-4 text-2xl text-foreground font-bold dark:text-white">Deshabilitar cuenta</h2>
                 <p className="mb-6 text-foreground ">
                     Ingresa tu correo electrónico y contraseña para confirmar la eliminación de tu cuenta.
