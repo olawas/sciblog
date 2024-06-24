@@ -42,6 +42,7 @@ model Estudio{
 
   comentarios Comentario[]
   tags String[]
+  enlace   String?
   createdAt DateTime @default(now())//Fecha Creación
   updateAt DateTime @updatedAt 
 }
