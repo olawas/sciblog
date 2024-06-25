@@ -7,12 +7,14 @@ import ThemeSwitch from '@/components/ThemeSwitch';
 import {Button} from '@nextui-org/button'; 
 import DailyPost from '../components/DailyPost';
 import Link from 'next/link'; // Importa Link de Next.js
+import { useQuery } from 'react-query';
+import Axios from '@/services/Axios';
 
 
 
 
 export default function Home() {
-
+  const latestQuery = useQuery('latest', async () => await Axios.get('/estudios/last'))
   return (
     <main className="w-full h-full overflow-y-scroll">
       <div className='flex flex-col text-on-secondary'>
@@ -37,8 +39,11 @@ export default function Home() {
         <div className='flex flex-col w-full justify-center space-y-4 items-center'>
           <div className='p-8 w-4/5 space-y-4'>
             <h2 className='font-semibold text-3xl'>Últimos artículos</h2>
-            <PreviewPost className="w-full"/>
-            <PreviewPost className="w-full"/>
+            {!latestQuery.isLoading && latestQuery.data.data.map((post, index) => (
+              <Link key={index} href={`/publicacion/${post.id}`}>
+                <PreviewPost titulo={post.titulo}/>
+              </Link>
+            ))}
           </div>
         </div>
         <div className='flex flex-col w-full justify-center space-y-4 items-center'>

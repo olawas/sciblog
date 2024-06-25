@@ -1,5 +1,5 @@
 import Image from 'next/image';
-const PreviewPost = ({className}) => {
+const PreviewPost = ({className, titulo}) => {
   return (
     <div className={className}>
       <div className="w-full flex flex-row">
@@ -12,7 +12,7 @@ const PreviewPost = ({className}) => {
         </div>
         <div className="bg-primary-bg text-on-primary w-3/4 h-60 flex flex-col border-2 border-gray-700 rounded-md ">
           <div className="">
-            <p className="text-lg font-semibold m-4"> Hábitos que mejoran la memoria </p>
+            <p className="text-lg font-semibold m-4">{titulo} </p>
           </div>
         </div>
       </div>

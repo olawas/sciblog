@@ -23,13 +23,13 @@ export default function Page() {
         <details className="p-4 bg-purpura rounded">
           <summary className="text-xl font-semibold cursor-pointer">¿Cómo puedo crear una publicación?</summary>
           <p className="pt-2">
-            Para crear una publicación se debe estar en el inicio de la red social. Puede ir al inicio haciendo clic a la izquierda en la opción de inicio, luego hacer clic en el botón 'Crear publicación' y rellenar los datos que se soliciten
+            Para crear una publicación se debe estar en el inicio de la red social. Puede ir al inicio haciendo clic a la izquierda en la opción de inicio, luego hacer clic en el botón Crear publicación y rellenar los datos que se soliciten
           </p>
         </details>
         <details className="p-4 bg-purpura rounded">
           <summary className="text-xl font-semibold cursor-pointer">¿Cómo puedo cerrar sesión?</summary>
           <p className="pt-2">
-            Para cerrar sesión, solo tienes que dirigirte a la opción de la derecha, arriba, y hacer clic en 'Cerrar Sesión'.
+            Para cerrar sesión, solo tienes que dirigirte a la opción de la derecha, arriba, y hacer clic en Cerrar Sesión.
           </p>
         </details>
       </div>
