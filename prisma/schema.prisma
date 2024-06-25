@@ -29,7 +29,6 @@ model Dataset {
   tipo String?
   userId  Int
   usuario_creador Usuario @relation(fields: [userId], references: [id])
-  
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
@@ -38,8 +37,6 @@ model Estudio{
   id       Int    @id @default(autoincrement())
   titulo    String   @db.VarChar(255)
   descripcion String?
-  datasetId Int
-
   comentarios Comentario[]
   tags String[]
   enlace   String?
