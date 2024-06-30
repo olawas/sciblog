@@ -1,53 +1,95 @@
 "use client";
-import MiniPost from '@/components/MiniPost';
-import PostCarousel from '@/components/PostCarousel';
-import PreviewPost from '@/components/PreviewPost';
-import SearchBar from '@/components/SearchBar';
-import ThemeSwitch from '@/components/ThemeSwitch';
-import {Button} from '@nextui-org/button'; 
-import DailyPost from '../components/DailyPost';
-import Link from 'next/link'; // Importa Link de Next.js
 
+import { registro } from '@/queries/usuarios';
+import { Button, Input, Select, SelectItem } from '@nextui-org/react';
+import { useMutation } from 'react-query';
+import { useState } from 'react'
+import { useRouter, } from 'next/navigation'
+import { useSession } from 'next-auth/react';
+const Page = () => {
+  const { data, status } = useSession()
+  const especializaciones = [
+    {
+      label: 'Oncología',
+      description: 'Especialización en carcinomas y enfermedades cancerigenas',
+      value: 'Oncología',
+    },
+    {
+      label: 'Pediatría',
+      description: 'Sección infántil de la salud',
+      value: 'Pediatría',
+    },
+    {
+      label: 'Neurología',
+      description: 'Estudio de la salud cerebral y sistema nerviosa',
+      value: 'Neurología'
+    }
+  ]
+  const router = useRouter()
+  const registroMutation = useMutation({
+    mutationFn: (data) => registro(data),
+    onSuccess: () => {
+      console.log('pushing')
+      router.push('/registro/completado')
 
+    },
+    onError: (error) => console.error('error api registro', error)
+  })
 
+  const [nombre, setNombre] = useState('')
+  const [apellido, setApellido] = useState('')
+  const [organizacion, setOrganizacion] = useState('')
+  const [especializacion, setEspecializacion] = useState([])
 
-export default function Home() {
-
+  const onRegistrar = (event) => {
+    event.preventDefault()
+    console.log(especializacion)
+    registroMutation.mutate({
+      nombre, apellido, area_especializacion: [...especializacion][0], organizacion
+    })
+  }
+  if (status === 'unauthenticated') router.push('/')
   return (
-    <main className="w-full h-full overflow-y-scroll">
-      <div className='flex flex-col text-on-secondary'>
-        <div className='flex flex-row w-full my-6 mx-2 px-2'>
-          <div className='flex w-full justify-start items-start'>
-            <Link href="/agregarPublicacion">
-              <Button color="primary"
-              >Nueva publicación</Button>
-            </Link>
-          </div>            
-          <div className='flex flex-col w-full justify-center space-y-4 items-center'>
-            <h1 className='font-semibold text-3xl'>Buscar</h1>
-            <SearchBar className='w-full'/>
-          </div>
-          <div className='flex flex-row w-full justify-end items-start mr-4'>
-           
-          </div>
+    <div className='w-full flex flex-col justify-start items-center p-8 md:mt-16'>
+      <form onSubmit={onRegistrar} className='w-full max-w-3xl flex flex-col items-center space-y-4'>
+        <div className="text-4xl mb-12 font-bold text-slate-700"> Registrar </div>
+        <div className='text-sm text-slate-700 font-light text-center'>Hemos detectado que su cuenta es nueva por aquí. Proporcione más información sobre usted para terminar con el registro de la cuenta, podrá cambiarlo mas adelante si lo desea.</div>
+        <div className='w-full m-2 flex flex-row space-x-2'>
+          <Input id="name" type="name" label="Nombre" placeholder="Ingrese su nombre" value={nombre} onValueChange={setNombre} />
+          <Input id="lastname" type="lastname" label="Apellido" placeholder="Ingrese su apellido" value={apellido} onValueChange={setApellido} />
         </div>
-        <div className='w-full justify-center flex flex-row'>
-          <PostCarousel className="w-4/5"/>
+        <div className="w-full">
+          <Select
+            items={especializaciones}
+            label="Área de especialización"
+            placeholder="Eliga su área principal de desempeño académico"
+            className="w-full placeholder:text-slate-400"
+            name="especializacion"
+            id="especializacion"
+            onSelectionChange={setEspecializacion}
+            selectedKeys={especializacion}
+          >
+            {(especializacion) => <SelectItem key={especializacion.value}>{especializacion.label}</SelectItem>}
+          </Select>
         </div>
-        <div className='flex flex-col w-full justify-center space-y-4 items-center'>
-          <div className='p-8 w-4/5 space-y-4'>
-            <h2 className='font-semibold text-3xl'>Últimos artículos</h2>
-            <PreviewPost className="w-full"/>
-            <PreviewPost className="w-full"/>
-          </div>
+        <div className="w-full">
+          <Input
+            label="Organización"
+            placeholder="Escriba la organización a la que pertenece"
+            className="w-full placeholder:text-slate-400"
+            name="organizacion"
+            id="organizacion"
+            onValueChange={setOrganizacion}
+            value={organizacion}
+          />
         </div>
-        <div className='flex flex-col w-full justify-center space-y-4 items-center'>
-          <div className='p-8 w-4/5 space-y-4'>
-            <h2 className='font-semibold text-3xl'>Post recomendado del día</h2>
-          </div>
-          <DailyPost className="w-5/6"/>
+
+        <div className='w-full'>
+          <Button type='submit'>Registrarse</Button>
         </div>
-      </div>
-    </main>
+      </form>
+    </div>
   )
 }
+
+export default Page

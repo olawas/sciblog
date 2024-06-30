@@ -11,7 +11,8 @@ const handler = NextAuth({
   secret: process.env.JWT_SECRET,
   callbacks: {
     jwt: async ({ token, user }) => {
-      return token
+      const res = await Usuario.findByEmail(token.email)
+      return {...token, usuario:res}
     },
     session: async ({ session, token }) => {
       if (token){
@@ -20,6 +21,7 @@ const handler = NextAuth({
         if (res) token.registered = true
         else token.registered = false
         session.user.registered = token.registered
+        session.usuario = res
         session.user = {...session.user, ...res}
       }
       return session

@@ -10,6 +10,8 @@ import { TrashIcon, PencilIcon, ShareIcon, EnvelopeIcon } from '@heroicons/react
 import Link from 'next/link'; // Importa Link de Next.js
 import ThemeSwitch from "@/components/ThemeSwitch";
 import { useSession } from "next-auth/react";
+import { useQuery } from "react-query";
+import Axios from "@/services/Axios";
 
 const Componente = () => {
   const { isOpen, onOpenChange } = useDisclosure();
@@ -23,6 +25,8 @@ const Componente = () => {
       console.error('No se pudo copiar el texto');
     });
   };
+  const session = useSession()
+  const mis_publicaciones = useQuery("mis_publicaciones", async () => await Axios.get(`/estudios/byUser/${session.data.usuario.id}`))
   const {data, status} = useSession()
   if(status != 'authenticated') return <div className="w-full h-44 flex justify-center items-center">
     <p className="text-center align-middle text-4xl text-slate-800 font-semibold w-full"> Debe iniciar sesión para ver su perfil</p>
@@ -125,16 +129,13 @@ const Componente = () => {
               </DropdownTrigger>
               
               <DropdownMenu>
-                <DropdownItem key="new" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="copy" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="new" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="copy" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="new" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="copy" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="new" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="copy" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="new" href="/#">Publicación</DropdownItem>
-                <DropdownItem key="copy" href="/#">Publicación</DropdownItem>
+                {
+                  !mis_publicaciones.isLoading && mis_publicaciones.data.data.map((publicacion) => (
+                    <DropdownItem key={publicacion.id} href={`/publicacion/${publicacion.id}`}>
+                      {publicacion.titulo}
+                    </DropdownItem>
+                  ))
+                }
               </DropdownMenu>
             </Dropdown>
           </div>
