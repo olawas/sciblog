@@ -14,9 +14,10 @@ const ForoPost = ({ className }) => {
           <div className="flex flex-col w-full">
             {data?.data.data.map((item, index) => (
               <div className="w-full px-4 mt-4" key={index}>
+                <a href={`/Tema/${item.id}`} onClick={console.log("El ID del tema seleccionado es: ", item.id)}>
                 <FotoForo
                   nombre={<strong>{item.usuario_tema.nombre + ' ' + item.usuario_tema.apellido}</strong>} description={item.nombre} idT={item.id} correo={item.usuario_tema.email} usuarioCorreo={session?.user?.email}
-                />
+                /></a>
               </div>
             ))}
           </div>

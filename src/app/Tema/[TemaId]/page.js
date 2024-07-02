@@ -1,14 +1,24 @@
+"use client"
 import { Button } from '@nextui-org/button';
 import PostTema from '@/components/tema/PostTema';
 import Postcom from '@/components/tema/Postcom';
-import Link from 'next/link';
+import Link from 'next/link'
+import useTemas from '../../../hooks/useTemas';
+export default function Page({params: {TemaId}}) {
+	const { tema, isLoading } = useTemas(TemaId);
+	if(isLoading){
+		return <div>Cargando...</div>
+	}
+	if(!tema){
+		return <div>El tema no existe</div>
+	}
 
-export default function Page() {
-
+	const {nombre, contenido} = tema;
 	return (
 		<div className='flex flex-col w-full'>
 			<div className='flex flex-col justify-start items-center'>
-				<PostTema className="w-full" />
+				<Button onClick={()=>{console.log("El id de esta wea es: ", TemaId)}}>ver el id de la wea</Button>
+				<PostTema className="w-full" nombre={nombre} contenido={contenido}/>
 				<div className="flex w-11/12 justify-start items-center mr-7 ">
 				 <Link href="/Tema/comentario">
 				 	<Button color="primary" className="text-2xl my-4">Comentar</Button>
